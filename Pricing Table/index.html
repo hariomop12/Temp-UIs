@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Table</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&display=swap");
+
+      * {
+        font-family: "Barlow Condensed", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #0f172a;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .heading {
+        color: #f97316;
+        font-size: 42px;
+        margin-bottom: 30px;
+      }
+
+      .pricing-wrapper {
+        display: flex;
+        gap: 26px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .table {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 12px;
+        padding: 25px;
+        width: 250px;
+        color: #e2e8f0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transition: 0.3s;
+      }
+
+      .table:hover {
+        transform: translateY(8px);
+        border-color: #f97316;
+      }
+
+      .table h1 {
+        color: #f97316;
+        font-size: 26px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        font-size: 16px;
+        color: #cbd5f5;
+      }
+
+      .price {
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+        margin: 10px 0;
+      }
+
+      .table button {
+        background-color: #f97316;
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .table button:hover {
+        background-color: #ea580c;
+      }
+
+      .featured {
+        border: 2px solid #f97316;
+        transform: scale(1.05);
+      }
+
+      .featured:hover {
+        transform: scale(1.08);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="heading">Pricing Table</h1>
+
+      <div class="pricing-wrapper">
+        <!-- Basic -->
+        <div class="table">
+          <h1>Basic</h1>
+          <p class="price">₹0/mo</p>
+          <ul>
+            <li>✔ 5 Projects</li>
+            <li>✔ 10 GB Storage</li>
+            <li>✔ Email Support</li>
+            <li>✖ Custom Domain</li>
+            <li>✖ Analytics</li>
+            <li>✖ Priority Support</li>
+          </ul>
+          <button>Get Started</button>
+        </div>
+
+        <!-- Standard -->
+        <div class="table featured">
+          <h1>Standard</h1>
+          <p class="price">₹499/mo</p>
+          <ul>
+            <li>✔ 15 Projects</li>
+            <li>✔ 50 GB Storage</li>
+            <li>✔ Email + Chat Support</li>
+            <li>✔ Custom Domain</li>
+            <li>✖ Advanced Analytics</li>
+            <li>✖ Priority Support</li>
+          </ul>
+          <button>Get Started</button>
+        </div>
+
+        <!-- Premium -->
+        <div class="table">
+          <h1>Premium</h1>
+          <p class="price">₹999/mo</p>
+          <ul>
+            <li>✔ Unlimited Projects</li>
+            <li>✔ 200 GB Storage</li>
+            <li>✔ 24/7 Support</li>
+            <li>✔ Custom Domain</li>
+            <li>✔ Advanced Analytics</li>
+            <li>✔ Priority Support</li>
+          </ul>
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
