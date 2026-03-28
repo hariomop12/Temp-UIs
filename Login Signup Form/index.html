@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Signup Form</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        color: #e2e8f0;
+        padding-top: 20px;
+      }
+
+      .hed {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .wrapper {
+        max-width: 700px;
+        width: 90%;
+      }
+
+      .login {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        padding: 25px;
+        border-radius: 12px;
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .signup {
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 20px;
+      }
+
+      .signup-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: #1e293b;
+        color: #e2e8f0;
+      }
+
+      input:focus {
+        outline: 2px solid #27d458;
+      }
+
+      button {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: #f63b83;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #27d458;
+      }
+      .toggle-btns {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .toggle-btns button {
+        flex: 1;
+      }
+      label {
+        font-weight: 500;
+        opacity: 0.8;
+      }
+      input {
+        width: 100%;
+      }
+
+      .toggle-btns button.active {
+        background: #f97316; /* orange — theme consistent */
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="hed">Login Signup Form</h1>
+      <div class="toggle-btns">
+        <button id="show-login">Login</button>
+        <button id="show-signup">Signup</button>
+      </div>
+      <div class="login">
+        <form class="login-form">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" placeholder="Username" />
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Password" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div class="signup">
+        <form class="signup-form">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Username" />
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" />
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" />
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm Password"
+          />
+          <button type="submit">Signup</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    const loginBox = document.querySelector(".login");
+    const signupBox = document.querySelector(".signup");
+
+    const loginBtn = document.getElementById("show-login");
+    const signupBtn = document.getElementById("show-signup");
+
+    signupBox.style.display = "none";
+
+    loginBtn.addEventListener("click", () => {
+      loginBox.style.display = "block";
+      signupBox.style.display = "none";
+      loginBtn.classList.add("active");  
+      signupBtn.classList.remove("active");  
+    });
+
+    signupBtn.addEventListener("click", () => {
+      loginBox.style.display = "none";
+      signupBox.style.display = "block";
+      signupBtn.classList.add("active");  
+      loginBtn.classList.remove("active");  
+    });
+  </script>
+</html>
