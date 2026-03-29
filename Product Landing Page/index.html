@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Landing Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        padding-top: 20px;
+        color: #e2e8f0;
+      }
+      .wrapper {
+        display: block;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .navbar {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-self: start;
+        justify-content: space-between;
+        padding: 20px;
+        
+        margin: 0 auto;
+        position: sticky;
+        top: 0;
+        background: #1e293b;
+        z-index: 1000;
+        border-bottom: 1px solid #334155;
+        border-radius: 15px;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #e2e8f0;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        font-size: 18px;
+      }
+      .nav-links li a {
+        color: #e2e8f0;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .nav-links li a:hover {
+        color: #fa6509;
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        min-height: 100vh;
+      }
+
+      .pname {
+        display: flex;
+        padding-top: 25px;
+        align-items: center;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #e19908;
+      }
+
+      .product-image {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+      .product-image:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+
+      .disc {
+        font-size: 20px;
+        text-align: center;
+        max-width: 600px;
+        margin-bottom: 20px;
+        color: #e19908;
+      }
+      .btn {
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #e2e8f0;
+        background: #fa6509;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        background: #27d458;
+      }
+      .scard {
+        padding-top: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+      }
+      .card:hover {
+        transform: translateY(-8px);
+        background: #27d458;
+      }
+
+      .card h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .i {
+        font-size: 40px;
+        color: rgb(45, 174, 36);
+        margin-bottom: 15px;
+        padding-top: 10px;
+        size: 20px;
+      }
+      .card p {
+        font-size: 16px;
+      }
+      .cta-banner {
+        margin-top: 40px;
+        padding-top: 25px;
+        background: #f97316;
+        text-align: center;
+        padding: 60px 20px;
+      }
+
+      .get-sb {
+        margin: 30px 0;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #e2e8f0;
+        background: #1e293b;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .get-sb:hover {
+        background: #27d458;
+      }
+      .footer {
+        margin-top: 40px;
+        padding: 20px;
+        text-align: center;
+        background: #1e293b;
+        color: #e2e8f0;
+      }
+      .line {
+        text-align: center;
+        font-weight: bold;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="navbar">
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <h1 class="pname">Product Name</h1>
+        <img src="https://picsum.photos/400/600" alt="" class="product-image" />
+        <p class="disc">Short description of the product.</p>
+        <button class="btn">Try Now</button>
+      </section>
+      <section class="scard">
+        <div class="card">
+          <h2>Feature 1</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 1.</p>
+        </div>
+        <div class="card">
+          <h2>Feature 2</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 2.</p>
+        </div>
+        <div class="card">
+          <h2>Feature 3</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 3.</p>
+        </div>
+        <div class="card">
+          <h2>Feature 1</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 1.</p>
+        </div>
+        <div class="card">
+          <h2>Feature 2</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 2.</p>
+        </div>
+        <div class="card">
+          <h2>Feature 3</h2>
+          <i class="i" data-lucide="menu"></i>
+          <p>Details about feature 3.</p>
+        </div>
+      </section>
+      <section class="cta-banner">
+        <h2>Ready to get started?</h2>
+        <button class="get-sb">Get Started Free</button>
+      </section>
+      <footer class="footer">
+        <p class="line">© 2025 ProductName. All rights reserved.</p>
+      </footer>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
