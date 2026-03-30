@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Sidebar</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      
+      .hea {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .layout-main {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      .sidebar {
+        width: 250px;
+        background: #222;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+        background: #f5f5f5;
+        color: #111;
+        border-radius: 10px;
+        height: 100vh;
+        overflow-y: scroll
+      }
+      .sidebar ul {
+        list-style: none;
+        font-size: 30px;
+        line-height: 1.5;
+        cursor: pointer;
+      }
+      .sidebar ul li:hover {
+        color: #df9413;
+        transition: color 0.3s ease;
+      }
+      .img {
+        width: 60%;
+        height: 50px;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      header h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #bbff00;
+        margin-top: 30px;
+      }
+      header p {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .card {
+        background: linear-gradient(135deg, #4caf50, #2e7d32);
+        padding: 24px;
+        border-radius: 18px;
+        color: #fff;
+        max-width: 320px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -30%;
+        width: 160px;
+        height: 160px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+      }
+
+      .card::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: -20%;
+        width: 120px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+      }
+      .card p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+        position: relative;
+        z-index: 1;
+      }
+
+      .t {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .sidebar ul li.active {
+        color: #f97316;
+        font-weight: 700;
+      }
+      .main.content {
+        margin-left: 270px;
+      }
+
+      .content {
+        margin-left: 270px;
+      }
+      table {
+        width: 100%;
+        margin-top: 40px;
+        border-collapse: collapse;
+        background: #9b2222;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      thead {
+        background: linear-gradient(135deg, #4caf50, #2e7d32);
+        color: #fff;
+      }
+
+      thead th {
+        padding: 18px 20px;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.25s ease;
+      }
+
+      tbody tr:hover {
+        background: #f0fdf4;
+      }
+
+      tbody td {
+        padding: 16px 20px;
+        font-size: 0.95rem;
+        color: #334155;
+      }
+
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      /* status badge */
+      tbody td:nth-child(2) {
+        font-weight: 600;
+        color: #15803d;
+      }
+
+      /* amount column */
+      tbody td:last-child {
+        font-weight: 700;
+        color: #2563eb;
+      }
+
+      /* mobile responsive */
+      @media (max-width: 768px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        thead {
+          display: none;
+        }
+
+        tbody tr {
+          background: #fff;
+          margin-bottom: 16px;
+          border-radius: 12px;
+          padding: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        tbody td {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        tbody td:last-child {
+          border-bottom: none;
+        }
+
+        tbody td::before {
+          font-weight: 700;
+          color: #111827;
+        }
+
+        tbody td:nth-child(1)::before {
+          content: "Name";
+        }
+
+        tbody td:nth-child(2)::before {
+          content: "Status";
+        }
+
+        tbody td:nth-child(3)::before {
+          content: "Amount";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="hea">Dashboard Sidebar</h1>
+    <div class="layout-main">
+      <aside class="sidebar">
+        <img src="https://picsum.photos/400/300" alt="" class="img" />
+        <ul>
+          <li class="active"><i data-lucide="car"></i> Dashboard</li>
+          <li><i data-lucide="home"></i> Home</li>
+          <li><i data-lucide="user"></i> Profile</li>
+          <li><i data-lucide="settings"></i> Settings</li>
+          <li><i data-lucide="log-out"></i> Logout</li>
+        </ul>
+      </aside>
+
+      <main class="content">
+        <header>
+          <h2>Welcome to the Dashboard</h2>
+          <p class="p">
+            This is a simple dashboard layout with a sidebar navigation. You can
+            customize the content area to display your data, charts, or any
+            other information you need.
+          </p>
+          <div class="t">
+            <div class="card">
+              <h3>Card Title 1</h3>
+              <p>
+                This is a card. You can use it to display important information
+                or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 2</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Card Title 3</h3>
+              <p>
+                This is another card. You can use it to display important
+                information or quick stats.
+              </p>
+            </div>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Active</td>
+              <td>₹500</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

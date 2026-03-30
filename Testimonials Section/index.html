@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Section</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+
+      body {
+        background: #0f172a;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        color: #e2e8f0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .test {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-top: 20px;
+      }
+
+      .con {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        background: #334155;
+        transition: background 0.3s ease;
+      }
+
+      .p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #cbd5e1;
+        margin-bottom: 10px;
+      }
+
+      .star {
+        color: #fbbf24;
+        margin: 10px 0;
+      }
+
+      .auther-dev {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+
+      .card p {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+      }
+
+      .author-name {
+        font-weight: 600;
+      }
+
+      .author-role {
+        font-size: 0.9rem;
+        color: #94a3b8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="test">Testimonials</h1>
+
+      <div class="con">
+        <!-- Card -->
+        <div class="card">
+          <p class="p">Bahut aacha product hai</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="p">John Doe</p>
+              <p class="p">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+          <p class="p">Amazing experience, highly recommended</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="p">Jane Smith</p>
+              <p class="p">CTO, Startup</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+          <p class="p">Worth every penny 🔥</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="author-name">John Doe</p>
+              <p class="author-role">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="p">Amazing experience, highly recommended</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="author-name">John Doe</p>
+              <p class="author-role">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="p">Amazing experience, highly recommended</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="author-name">John Doe</p>
+              <p class="author-role">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="p">Amazing experience, highly recommended</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="author-name">John Doe</p>
+              <p class="author-role">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="p">Amazing experience, highly recommended</p>
+          <span class="star">⭐⭐⭐⭐⭐</span>
+
+          <div class="auther-dev">
+            <img
+              src="https://avatars.githubusercontent.com/u/143026952?v=4"
+              class="img"
+            />
+            <div>
+              <p class="author-name">John Doe</p>
+              <p class="author-role">CEO, Company Inc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
